@@ -139,25 +139,57 @@
 <div class="main-menu">
     <div class="ornament">
         <div class="containit">
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu1", Array(
+	"COMPONENT_TEMPLATE" => ".default",
+		"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MAX_LEVEL" => "2",	// Уровень вложенности меню
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+	),
+	false
+);?>
             <div class="menu">
                 <!-- navigation start -->
                 <div id="navigation">
-
+                    <?if (!empty($arResult)):?>
                     <ul class="sf-menu">
-                        <li class="current"><a href="index-roundabout.html" class="applyfont">Library</a>
-                        </li>
-                        <li><a href="gallery-grid.html" class="applyfont">Collection</a>
+                        <?foreach($arResult as $key => $arItem):?>
+                        <?if($arItem['DEPTH_LEVEL'] != 1){
+                        continue;
+                            }
+                            ?>
+                            <?if($arItem['DEPTH_LEVEL'] == 1):?>
+                        <li <?if($arItem["SELECTED"]):?>class="current"<?endif;?>>
+                            <a href="<?=$arItem["LINK"];?>" class="applyfont"><?=$arItem["TEXT"];?></a>
                             <ul>
-                                <li><a href="gallery-grid.html">Films</a></li>
-                                <li><a href="gallery-grid-sidebar.html">Games</a></li>
-                                <li class="last roundbottom"><a href="blank.html">Musics</a></li>
+                            <?endif;?>
+                                <?foreach($arResult as $keyInner => $arItemInner):?>
+                                <?if($keyInner <= $key) {
+                                    continue;
+                                }
+                                ?>
+                                <?if($arItemInner['DEPTH_LEVEL'] == 2):?>
+                                <li><a href="<?=$arItemInner["LINK"];?>"><?=$arItemInner["TEXT"];?></a></li>
+                                <?endif;?>
+                                <?if($arItemInner['DEPTH_LEVEL'] != 2){
+                                    break;
+                                }
+                                ?>
+                                <?endforeach;?>
+                            <?if($arItem['DEPTH_LEVEL'] == 1):?>
                             </ul>
                         </li>
-                        <li><a href="faq.html" class="applyfont">About us</a></li>
-                        <li><a href="services-wide.html" class="applyfont">Contacts</a>
-                        </li>
-                    </ul>
-
+                            <?endif;?>
+                        <?endforeach;?>
+                    <?endif?>
                 </div>
                 <!-- navigation end -->
             </div>

@@ -93,9 +93,9 @@ jQuery(document).ready(function($){
 });
 
 // Cufon Replacements
-Cufon.replace(' h1, h2, h3, h4, h5, .featured-top, .pack .button, .pack-last .button, .textbutton, .applyfont, ul.css-tabs a', { hover: true, fontFamily: 'Museo' });
-Cufon.replace('.header h1, .header-alt h1, .header-alt-sec h1, .header-alt h4, .header-alt-sec h4, .header-inner h1, .subtitle h3', { hover: true, textShadow: '1px 1px 0 #444444', fontFamily: 'Museo' });
-Cufon.replace('.btn-small, .btn-medium, .btn-big, .btn-big-light, .form-button, .accordion h2, .text-replace, .big-home-button', { hover: true, textShadow: '1px 1px 0 #ffffff', fontFamily: 'Museo' });
-Cufon.replace('.btn-orange-small, .btn-orange-medium, .btn-orange-big', { hover: true, textShadow: '1px 1px 0 #cb6a20', fontFamily: 'Museo' });
-Cufon.replace('.btn-green-small, .btn-green-medium, .btn-green-big', { hover: true, textShadow: '1px 1px 0 #588b11', fontFamily: 'Museo' });
-Cufon.replace('.big-footer h4', { textShadow: '1px 1px 0 #555555', fontFamily: 'Museo' });
+Cufon.replace(' h1, h2, h3, h4, h5, .featured-top, .pack .button, .pack-last .button, .textbutton, .applyfont, ul.css-tabs a', { hover: true, fontFamily: 'Areal' });
+Cufon.replace('.header h1, .header-alt h1, .header-alt-sec h1, .header-alt h4, .header-alt-sec h4, .header-inner h1, .subtitle h3', { hover: true, textShadow: '1px 1px 0 #444444', fontFamily: 'Areal' });
+Cufon.replace('.btn-small, .btn-medium, .btn-big, .btn-big-light, .form-button, .accordion h2, .text-replace, .big-home-button', { hover: true, textShadow: '1px 1px 0 #ffffff', fontFamily: 'Areal' });
+Cufon.replace('.btn-orange-small, .btn-orange-medium, .btn-orange-big', { hover: true, textShadow: '1px 1px 0 #cb6a20', fontFamily: 'Areal' });
+Cufon.replace('.btn-green-small, .btn-green-medium, .btn-green-big', { hover: true, textShadow: '1px 1px 0 #588b11', fontFamily: 'Areal' });
+Cufon.replace('.big-footer h4', { textShadow: '1px 1px 0 #555555', fontFamily: 'Areal' });

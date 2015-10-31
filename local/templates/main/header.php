@@ -139,7 +139,7 @@
 <div class="main-menu">
     <div class="ornament">
         <div class="containit">
-            <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu1", Array(
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
 	"COMPONENT_TEMPLATE" => ".default",
 		"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
 		"MENU_CACHE_TYPE" => "A",	// Тип кеширования

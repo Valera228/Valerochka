@@ -66,11 +66,15 @@
 
         <div class="copy"> &copy; <?=date('Y');?> <a href="http://www.spinform.ro">Неон</a>. Все права защищены.</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 		
 >>>>>>> task_5_social_icons
+=======
+		
+>>>>>>> task_3_top_menu
 			<?$APPLICATION->IncludeComponent("bitrix:news.list", "social", Array(
 				"COMPONENT_TEMPLATE" => ".default",
 				"IBLOCK_TYPE" => "photos",	// Тип информационного блока (используется только для проверки)

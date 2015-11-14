@@ -1,15 +1,36 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Библиотека", 
-		"/about/",
-		Array(),
-		Array(),
-		""
+		"Главная", 
+		"index.php", 
+		Array(), 
+		Array(), 
+		"" 
 	),
 	Array(
-		"Коллекция", 
+		"Библиотека", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фильмы", 
 		"/company/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Музыка", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Игры", 
+		"", 
 		Array(), 
 		Array(), 
 		"" 

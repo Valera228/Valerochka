@@ -6,4 +6,4 @@
  * Time: 0:01
  */
 ?>
-<img src="<?=SITE_TEMPLATE_PATH;?>/images/may/Логотип1.png" alt="Novux" />
+<img src="<?=SITE_TEMPLATE_PATH;?>/images/may/NEON1.png" alt="Novux" />

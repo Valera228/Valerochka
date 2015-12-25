@@ -7,7 +7,7 @@ global $USER;
 ###
 \Bitrix\Main\Loader::includeModule('miet.kpi');
 use MIET\KPI;
-###Проверка входных параметров на корректность и приведение их к нужному виду###
+###Проверка входных параметров на корректность и приведение их кнужному виду###
 $arParams["USER_ID"] = intval($arParams["USER_ID"]);
 if(!$arParams["USER_ID"]) {
     ShowError(GetMessage("EMPTY_USER"));
@@ -27,7 +27,7 @@ if(strlen($arParams["DATE_FORMAT"]) <= 0) {
 ###
 ###Сохранение значений KPI###
 if($_REQUEST['saveKPI']) {
-    if(KPI\KPIManager::SetKPIEmployee($arParams["USER_ID"],
+    if(KPI\KPIManager::SetKPIEmployee($arParams['USER_ID'],
         $_REQUEST['UF_PERIOD'], $_REQUEST['KPI'])) {
         $arResult['OK'] = 'Изменения успешно сохранены';
     } else {
@@ -36,8 +36,7 @@ if($_REQUEST['saveKPI']) {
 }
 ###
 ###Получение данных из БД###
-if($this->StartResultCache(false, array(($arParams["CACHE_GROUPS"]
-=== "N" ? false: $USER->GetGroups()), $bUSER_HAVE_ACCESS))) {
+if($this->StartResultCache(false, array(($arParams["CACHE_GROUPS"] == "N" ? false: $USER->GetGroups()), $bUSER_HAVE_ACCESS))) {
     ###Формирование списка отчетных периодов (месяц, год)###
     //Получение текущего месяца и года
     for($i = 1; $i <= 12; $i++) {
@@ -73,3 +72,4 @@ if(isset($arResult["ITEM"])) {
     return $arResult["ITEM"];
 }
 ###
+?>

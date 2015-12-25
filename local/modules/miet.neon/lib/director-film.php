@@ -1,0 +1,50 @@
+<?php
+namespace MIET\NEON;
+use Bitrix\Main\Entity;
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
+class DirectorFilmTable extends Entity\DataManager {
+    public static function getFilePath()
+    {
+        return __FILE__;
+    }
+    /*Название таблицы HL в БД*/
+    public static function getTableName()
+    {
+        return 'director_film';
+    }
+    /*Описание полей сущности (соответсвуют полям HL EmployeeKPI)*/
+    public static function getMap()
+    {
+        return array(
+            'ID' => array(
+                'data_type' => 'integer',
+                'primary' => true,
+                'autocomplete' => true,
+                'title' => Loc::getMessage('FILM_NEON_ID_FIELD')
+            ),
+            'UF_FILM_ID' => array(
+                'data_type' => 'integer',
+                'required' => true,
+                'title' => Loc::getMessage('FILM_NEON_UF_FILM_ID_FIELD')
+            ),
+            'UF_DIRECTOR_ID' => array(
+                'data_type' => 'integer',
+                'required' => true,
+                'title' => Loc::getMessage('FILM_NEON_UF_DIRECTOR_ID_FIELD')
+            ),
+
+            //Описываем все связи с другими таблицами (внешние ключи)
+            new Entity\ReferenceField(
+                'UF_FILM_ID',
+                'MIET\NEON\FilmTable',
+                array('=this.UF_FILM_ID' => 'ref.ID')
+            ),
+            new Entity\ReferenceField(
+                'UF_DIRECTOR_ID',
+                'Bitrix\Iblock\ElementTable',
+                array('=this.UF_DIRECTOR_ID' => 'ref.ID')
+            ),
+        );
+    }
+}
